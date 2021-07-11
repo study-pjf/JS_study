@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //根据函数的调用方式不同时，this会指向不同的对象 
+        //1.以函数的方式调用this永远指向window
+        function fun(){
+            console.log("you mam");
+        }
+        fun(this);
+        //2.以方法的形式调用this指向调用改方法的对象
+        var new1={
+            name="你爸爸"
+        }
+        new1.console(this);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

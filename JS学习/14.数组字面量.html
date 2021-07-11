@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 使用构造函数创建数组,并且在创建时就指定数组中的元素，就是将要添加的元素作为构造函数的参数传递
+        var arr =new Array(1,2,3);
+        console.log("我是arr中的元素"+arr);
+
+        // 使用字面量创建数组,并且在创建时就指定数组中的元素
+        var arr1 = [1,2,3,"pjf","是","你","法德"];
+
+        // 输出arr1中的元素
+        console.log("我是arr1中的元素"+arr1);
+
+        // 该处表示创建一个长度为1的数组，数组中只有一个元素且为10
+        arr3 = [10];
+        console.log(arr3);
+
+        // 该处表示创建一个长度为10的数组，元素为空
+        arr4 =new Array(10);
+        console.log(arr4);
+
+        // 数组中的元素可以是任意数据类型，也可以是对象
+        arr5 =[];
+
+        // 使用字面量创建一个对象obj
+        // 将对象obj放入数组最后一个元素中并输出该数组
+        var obj={name:"重楼"};
+        arr5[arr5.length]=obj;
+        console.log(arr5);
+
+        // 也可以在创建时直接放入数组中
+        arr6 =[{name:"景天"},{name:"徐长卿"},{name:"紫嫣"}];
+        console.log(arr6);
+
+        // 在数组中放入函数
+        arr7 =[function(){alert("我是数组中的函数元素"+1)},function(){alert("我是数组中的函数元素2")}];
+        // 输出arr7中索引为0的函数元素
+        console.log(arr7[0]());
+        
+        // 也可以数组中放入数组
+        arr8 = [["我","第","一"],["我","第","二"],["我","第","三"]];
+        console.log("该处为输出该数组中的第一个元素"+arr8[0]);
+        console.log("该处为输出该数组中的所有元素"+arr8);
+    </Script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fun(a,b){
+            console.log(a);
+            console.log(b);
+            // 此时函数fun中this是指向对象obj中，可以从输出看出
+            alert(this+"this为fun函数调用时的类型时为window，为函数方法调用时为object");
+        }
+        // 该处为普通函数调用时
+        fun();
+        // 设置一个对象obj 好让call（） apply（） 方法调用
+        var obj={
+            name:"pjf",
+            sayName:function(){
+                alert("我是obj里的sayName");
+            }
+        };
+        // call（）和apply（）都可以将对象指定为第一个参数，则这个函数的this将会指向这个对象
+        // 这里是调用call函数方法参数为obj对象，后面的参数是将形参依次传递
+        fun.call(obj,1,2);
+        // 这里用apply函数方法调用，后面的参数需要放入数组中统一传递
+        fun.apply(obj,[1,2]);
+    </script>
+</body>
+</html>

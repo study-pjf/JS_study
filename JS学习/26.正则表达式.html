@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 该处为实例化一个构造函数数RegExp正则，参数表示制定的规则
+        // RegExp中
+        // 参数一表示 正则表达（即制定的规则） 参数二表示 设定匹配的范围
+        // 该处表示有无字母a,参数二表示忽略大小写
+        var reg =new RegExp("a","i");
+        var str="Abc";
+
+        // 该处为使用正则构造函数的检查方法，看字符串str是否满足，RegExp中制定的规则（满足返回true，不满足返回false）
+        console.log(reg.test(str));
+    </script>
+    
+</body>
+</html>

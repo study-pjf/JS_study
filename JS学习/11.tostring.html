@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function MyClass(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        var a=new MyClass("PJF",21);
+        var b=new MyClass("孙悟空",521);
+        // 当我们在页面上打印一个对象时，事件是输出对象的toString（）方法的返回值
+        console.log(a+"第一次输出");
+        // 实例化a中的toString（）方法
+        var result = a.toString();
+        // 输出它
+        console.log(result+"输出toString中的返回值");
+        // 如果希望输出对象时不想它输出【object object】时，可以为对象添加一个toString（）方法
+        // 将toString的返回值改为输出定义的参数时
+        a.toString = function(){
+            return "MyClass[name="+this.name+",age="+this.age+"]";
+        }
+        // 发现输出a能正常输出，b的输出的还是【object object】
+        console.log(a+"a的第二次输出");
+        console.log(b+"我是输出的b");
+        // 此处为修改原型中的toString（）
+        MyClass.prototype.toString =function(){
+            return "MyClass[name="+this.name+",age="+this.age+"]";
+        }
+        // a和b都可以正常输出
+        console.log(a+"a的第三次输出");
+        console.log(b+"我是第二次输出的b");
+        
+    </script>
+</body>
+</html>

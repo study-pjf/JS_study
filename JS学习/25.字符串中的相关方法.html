@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = "Hello javascript";
+        // lastIndexOf()方法表示从字符串末尾向前，检查字符串中是否有指定字符"H"到索引为4时停止（索引还是从前数起），有则返回第一次出现该字符的索引，无则返回-1
+        console.log(str.lastIndexOf("H",4));
+
+        //charAt（）  该处表示返回字符串str中索引为4的字符，即返回o
+        console.log(str.charAt(4));
+
+        //charCodeAt（） 该处表示返回字符串中索引为4的字符的字符编码，即返回字符o的字符编码
+        console.log(str.charCodeAt(4));
+
+        //fromCharCode（） 该方法是通过构造函数String进行调用的，是将字符编码返回成字符
+        console.log(String.fromCharCode(111));
+
+        // concat()将两个或多个字符串进行连接中间用逗号连接，不影响原数组
+        console.log(str.concat(str,"AAA"));
+
+        // indexOf()查找字符串中是否有指定字符，第一个参数表示查找的字符，第二个参数表示开始查找的位置，有则返回第一个出现指定字符时的索引，无则返回-1
+        // 注意该方法Of的O为大写
+        console.log(str.indexOf("l",4));
+
+        // slice() 方法表示从指定位置截取指定的内容并返回，不影响原数组（返回的数据是包括开始内容 不包括结束内容的）
+        console.log(str.slice(6,10));
+        // 当第二个参数为负数时表示从后面开始数，该处就为结束位置（须注意当第二参数为负数时，截取的字符包括该结束位置字符）
+        console.log(str.slice(6,-5));
+
+        // 该方法也是截取指定位置的字符并返回，不同的是不接受负数为参数，当参数为负数或小于一时它会自动将负数的参数转为0，并调整两参数的位置（所以该方法的返回值为”Hello “）
+        console.log(str.substring(6,-1));
+
+        // 该方法也表示截取指定字符串，不同的是它的第一参数是开始的位置，第二参数表示截取的数量
+        console.log(str.substr(0,10));
+
+        // 将字符串转换为数组 当参数" "时表示将字符串以" "为界限将字符串分为多份放入数组中
+        console.log(str.split(" "));
+
+        // 将该字符串转为大写并返回
+        console.log(str.toUpperCase());
+
+        // 将该字符串转为小写并返回
+        console.log(str.toLowerCase());
+
+        // 注意以上方法都是在不影响原字符串的情况下返回输出值，该处输出str字符串发现原字符串无改变
+        console.log(str);
+    </script>
+</body>
+</html>

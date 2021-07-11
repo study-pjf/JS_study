@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1 = ["重楼","紫嫣"];
+        var arr2 = ["景天","雪见"];
+        var arr3 = ["茂茂","必平"];
+
+        // 使用concat（）方法将任意数组进行连接并返回新的数组，原数组不受影响
+        console.log(arr1.concat(arr2,arr3));
+        // concat方法的参数中也可以放数据元素，也可以将其连接并返回
+        console.log(arr1.concat(arr2,arr3,"pjf","yjj"));
+        // 此处输出arr1，里面的元素还是之前的元素，不受concat的影响
+        console.log(arr1);
+
+
+        // join()方法可以将数组转换为一个字符串，并作为返回值返回，原数组不受影响
+        //  在join（）中可以指定一个字符串作为参数，这个字符串会成为数组元素中的连接符
+        // 如果不指定连接符，则会默认使用','作为连接符
+        // 下面为不指定连接符时输出的结果
+        console.log(arr1.join());
+        // 将连接符设为123时
+        console.log(arr1.join(123));
+        // 将连接符设置为空时
+        console.log(arr1.join(""));
+
+
+        // reverse（）方法 可以用来反转数组（前面的去后面，后面的去前面），该方法会改变原数组
+        arr2.reverse();
+        // 输出修改后的arr2，发现数组已经被颠倒过来
+        console.log(arr2);
+
+
+        // sort（）方法 可以将数组中的元素进行排序（默认按照Unicode编码进行排序，从小到大），会改变原数组
+        // 对数字进行排序时，可能的到错误的结果
+        // 需要在参数中写入回调函数，来指定排序。
+            // 当回调函数的返回值大于0，则元素交换位置
+            //          当返回值小于0,元素位置不变
+            //           当返回等于0,则认为元素相等，元素位置也不变
+        var arr4 = [1,5,7,2,3,4,1,8];
+        // 当此方法的回调函数中为a-b时为升序排列
+        arr4.sort(function(a,b){
+            return a-b;
+        });
+        console.log("我是返回值为a-b时的升序排序"+arr4);
+        // 当此方法的回调函数中为b-a时为降序排列
+        arr4.sort(function(a,b){
+            return b-a;
+        });
+        console.log("我是返回值为b-a时的升序排序"+arr4);
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 垃圾回收（GC） 
+            // 在JS中拥有自动的垃圾回收机制，会自动将没有被任何变量或属性引用的对象从内存中删除
+            //我们只需要将变量的值设置为null，JS便会将我们不需要的对象从堆内存中删除
+        // 实例化Object为obj，即在栈内存中放入一个指向堆内存地址的变量obj
+        var obj=new Object();
+        // 即变量obj的值不在是指向堆内存的地址而为null
+        obj=null;
+    </script>
+</body>
+</html>

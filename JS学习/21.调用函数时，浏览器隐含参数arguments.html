@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // arguments也是调用函数时，浏览器传递过来的隐含参数
+        // 它用来封装传递过来的实参
+        // 它是一个类数组对象，可以通过索引来操作数据，也可以获取该 类数组的长度
+        // 它里面有一个属性叫callee，这个属性对应一个函数对象，就是当前指向的函数的对象
+        function fun(a,b){
+            // 找到封装在arguments中索引为1的数据并输出
+            console.log(arguments[1]);
+            // 输出封装在arguments中索引为0的数据长度
+            alert("输出封装在arguments中实参数组的长度="+arguments.length);
+            // 该处输出arguments的callee属性，是指向的当前函数对象
+            console.log(arguments.callee);
+        }
+        fun(100,2);
+        
+    </script>
+</body>
+</html>

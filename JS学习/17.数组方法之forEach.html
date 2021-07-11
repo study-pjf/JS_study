@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1=["刘伟","李伟","熊伟"];
+        // 使用forEach遍历arr1数组
+        /*JS中我我们提供的方法，用来遍历数组
+        * 该方法需要使用一个函数作为参数，我们只需要创建函数并设定好形参，浏览器会自动将数组遍历并将元素作为实参传递进来
+        * 浏览器会传递三个实参参数：1.遍历的元素  2.遍历的索引  3.正在遍历的数组
+        *
+        */
+        arr1.forEach(function(name,a,b){
+            console.log(name);
+            console.log(a);
+            console.log(b);
+        });
+    </script>
+</body>
+</html>

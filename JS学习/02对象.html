@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    //01 使用构造函数创建对象(注意object的首字母需要大写,而且使用构造函数的方法创建对象只能new Object（）)
+    var obj = new Object();
+    obj.name="PJG";
+    obj.age="18";
+    obj.length="20cm";
+    // 用于输出普通信息
+    console.log(obj);
+    // 删除对象中的属性
+    delete obj.length;
+    // 警示对话框 以对话框的形式弹出obj.age
+    alert(obj.age);
+    //typeof()  得到该值的数据类型 
+    alert(typeof(obj));
+
+    //02 {}字变量创建对象  括号中放入其属性名和属性值中间用":"隔开 属性之间用","隔开,";"结束
+    var obj2={
+        name:"悟空",
+        age:"501",
+    // 对象的属性也可以是函数
+    // 当一个函数作为一个对象的属性保存
+    // 我们称这个函数是这个对象的方法
+        sayName:function(){
+            alert("孙悟空");
+        }
+    };
+    function fun(){
+        alert("我是fun函数中的");
+    };
+    // 这个叫调用对象的方法
+    obj2.sayName();
+    // 这个叫调用函数
+    // 两个本质上一样，就是叫法不同
+    fun();
+    
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 用字变量创建一个数组arr
+        var arr = ["景天","雪见","重楼","紫嫣","茂茂"];
+
+        // 使用for遍历arr数组
+        for(var i=0;i<arr.length;i++){
+            console.log(arr[i]);
+        }
+
+        // 练习题：用构造函数创建per1到5个变量并赋值，将这五个变量放入arr1中后，求将arr1中变量中age大于或等于18的元素放入newArr数组中
+        function Person(name,age){
+            this.name=name;
+            this.age=age;
+        }
+        var per1=new Person("茂茂","16");
+        var per2=new Person("紫嫣","18");
+        var per3=new Person("重楼","500");
+        var per4=new Person("雪见","18");
+        var per5=new Person("景天","18");
+
+        var arr1=[per1,per2,per3,per4,per5];
+
+        // 答案 此处为封装的函数
+        function getAdult(arr){
+            var newArr = [];
+            for(var i=0;i<arr.length;i++){
+                if(arr[i].age>=18){
+                    // newArr[i]=arr[i]; 也是可以输出正确的值，但它的数组长度却等于arr数组的长度
+                    // 用push输出后newArr的长度为4，刚好为年龄满足成年要求的几个数据，所以好一点
+                    newArr.push(arr[i]);
+                }
+            }
+            return newArr;
+        }
+        // 此处将arr1数组作为实参放入并输出
+        console.log(getAdult(arr1));
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=["景天","徐长卿","重楼","雪见","紫嫣"];
+
+        //向数组的末尾添加一个或多个元素，并返回新的数组长度
+        var result=arr.push("茂茂");
+        console.log(arr);
+        console.log("我是用result的到它的结果（返回值）"+result);
+
+        // 向数组的开头添加一个或多个元素，并返回新的数组长度
+        var result=arr.unshift("必平");
+        console.log(arr);
+        console.log("我是用result的到它的结果（返回值）"+result);
+
+        // 向数组的末尾删除一个数组元素，并返回改个被删除的元素
+        var result=arr.pop();
+        console.log(arr);
+        console.log("我是用result的到它的结果（返回值）"+result);
+
+        // 向数组的开头删除一个元素，并返回这个被删除的元素
+        var result=arr.shift();
+        console.log(arr);
+        console.log("我是用result的到它的结果（返回值）"+result);
+    </script>
+</body>
+</html>

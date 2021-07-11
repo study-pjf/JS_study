@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 基本(原始)数据类型
+        // String Number Boolean Null Undefined
+        // 引用数据类型
+        // Object
+
+        // JS中为我们提供了三个包装类，通过这三个包装类可以将基本数据类型峰数据转换为对象
+        // String（） 
+        // 将基本数据类型 字符串 转换为String对象
+        // Number（） 
+        // 将基本数据类型的 数字 转换为Number对象
+        // Boolean（）
+        // 将基本数据类型 布尔值 转换为Boolean对象
+        //   但是我们在实际运用中不会使用基本数据类型的对象
+        //   如果使用基本数据类型的对象，在作比较时，可能会带来一些不可预料的结果
+        var S="ABCDR";
+        var S1 = new String("ABCDR");
+        var S2 = new String("ABCDR");
+        console.log(typeof S);
+        // 该处为两个String对象的对比，结果为false，因为两个对象对比时它们的地址不同
+        console.log(S1==S2);
+
+        var B =true;
+        var B1= new Boolean(true);
+        console.log(typeof B);
+        // 该处为基本数据类型和 布尔对象的对比，结果为ture，因为基本数据类型和对象比较时系统会自动将对象转化为对比的数据的数据类型
+        console.log(B==B1);
+
+
+        // 方法和属性只能添加给对象不能添加给基本数据类型
+        // 但下面是因为当我们在给基本数据类型的值去调用属性和方法时
+            // 浏览器会 临时 使用包装类将其转换为对象，然后在调用对象的属性和方法，在使用后原数据类型不变
+            
+        var a = 123;
+        // 该处调用toString方法时，相当于浏览器临时将基本数据类型 a 转换为了对象，其实是调用的Number中的方法
+        a = a.toString();
+        // 该处调用a.hello方法时，相当于浏览器第二次临时将基本数据类型 a 转换为了对象，其实是调用的String中的方法
+        a.hello = "hello";
+        console.log(a);
+        console.log(typeof a);
+    </script>
+</body>
+</html>

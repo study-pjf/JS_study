@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 01变量声明提前
+        // 使用var声明变量，会在所有的代码执行之前被声明但不会赋值
+       // （注意变量是被声明，而并没有执行赋值操作）
+        console.log(a);
+        var a= 123;
+        // 02函数声明提前
+            // 02_1使用函数声明的形式创建的函数 function 函数名（值1，值2）{函数体}
+            // 它会在所用的代码执行之前被创建
+
+        fun();// 调用函数放在创建函数对象的前面，该函数照常执行
+        function fun(){
+            console.log("我是废物");
+        }
+            // 02_2使用函数表达式创建函数或用new构造函数对象，并不能在函数被创建之前调用该函数
+            // 因为它前面都有var，相当于他们也只是声明被提前而已，而不是函数被提前
+        // 使用new声明调用Function构造函数来创建函数对象
+        var fun1=new Function("console.log('我不是废物，使用构造函数时首字母必须大写(注意)');");
+        fun1();
+        // 使用函数表达式创建函数
+        var fun2 = function(){
+            alert("你是猪吗？？？？");
+        };
+        fun2();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

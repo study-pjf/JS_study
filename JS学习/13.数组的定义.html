@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 使用构造函数创建一个数组变量arr
+        var arr=new Array();
+        
+        // 向数组元素中存入值
+        arr [0]="pjf";
+        arr [1]="是";
+
+        // 输出索引为0的数组元素
+        console.log(arr[0]);
+
+        // length在此处表示输出数组的长度，length只能得到连续的数组的长度
+        console.log(arr.length);
+        arr [99]="99";
+
+        // 此处length输出为最大索引加一的长度，因为到此arr数组为不连续赋值
+        console.log(arr.length);
+
+        // 当我们想向数组的最后添加数组元素的值时，可以使用length对数组进行赋值
+        arr[arr.length] = 60;
+        arr[arr.length] = 70;
+        // 输出arr数组中的所有元素
+        console.log(arr);
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        原型prototype        
+        我们所创建的每一个函数，解析器都会向函数中添加入一个prototypes属性
+            这个属性对应这一个对象，所谓原型对象
+        如果函数作为普通函数调用，potootype没有任何作用
+        但当以构造函数形式调用时，它所创建的对象都会有一个隐含属性指向该构造函数的原型对象
+            可以使用__proto__来访问该属性
+
+        原型对象相当于一个公共区域，所有同一个类的实例都可以对它进行访问（前提是同一个构造函数，所创建的对象）
+            我们可以将对象中共有的内容写入原型对象中。
+        当我们访问对象的属性或方法时，它会优先从对象自身中寻找，如果有则直接使用，如无则从prototype即原型对象中寻找并使用,若还无则从原型的原型中寻找，直到找到Object对象的原型，若也无则返回undefined
+    -->
+    <script>
+        function MyClass(){
+            
+        }
+        MyClass.prototype.b="我是原型里面的b";
+        var mc = new MyClass();
+        //当我们访问对象的属性或方法时，它会优先从对象自身中寻找，如果有则直接使用，如无则从prototype即原型对象中寻找并使用
+        mc.a="我是mc中的a";
+        console.log(mc.a);
+        console.log(mc.b);
+        //检查mc中有无name属性，有则返回true反之false，但当原型对象中也有该属性时，它也会返回true
+        console.log("name" in mc);
+        //可以使用hasOwnProperty（）方法，来检查自身中是否含有该属性，有则返回true反之false
+        console.log(mc.hasOwnProperty("a"));
+
+        // 原型对象也是对象，所以它也有原型
+        console.log(mc.__proto__.hasOwnProperty("hasOwnProperty"));
+        // hasOwnProperty（）方法就是原型的原型中的方法
+        console.log(mc.__proto__.__proto__.hasOwnProperty("hasOwnProperty"));
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1=["景天","重楼","茂茂","白豆腐"];
+
+        // 现使用slice方法对arr1数组的指定元素进行提取
+        // 注意：slice的参数是指从数组索引0 到2位置（不包含2）的元素的提取，并作为返回值返回（提取的元素还在数组中）
+        var result=arr1.slice(0,2);
+        // 这里返回的是查看提取的元素
+        console.log(result);
+        // 打印数组发现数组无变化
+        console.log(arr1);
+
+        var arr2=["景天2","重楼2","茂茂2","白豆腐2"];
+        // 现使用splice方法对arr1数组的指定元素进行删除，并添加新元素雪见和紫嫣
+        // splice（）方法 可以将指定索引的元素进行删除并添加新元素，新元素从第一个索引参数位置开始添加（索引参数后不写元素即只删除元素不添加新元素）
+        var result=arr2.splice(2,3,"雪见","紫嫣","必平");
+        // 这里是返回的被删除的元素
+        console.log(result);
+        // 打印数组发现数组中索引2 到3的元素被删除，并从索引2处加入3个新元素
+        console.log(arr2);
+
+        // 总结：使用slice对数组中的元素进行提取后，不会对原来数组造成影响。
+        //       而使用splice对数组进行操作后原数组发生变化。
+    </script>
+</body>
+</html>
