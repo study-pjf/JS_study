@@ -1,2 +1,2 @@
 # JS_study
-JS基础的学习
+JS的学习
